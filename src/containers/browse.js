@@ -1,18 +1,18 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState, useEffect, useContext } from 'react';
-import Fuse from 'fuse.js';
-import { Card, Header, Loading, Player } from '../components';
-import * as ROUTES from '../constants/routes';
-import logo from '../logo.svg';
-import { FirebaseContext } from '../context/firebase';
-import { SelectProfileContainer } from './profiles';
-import { FooterContainer } from './footer';
+import React, { useState, useEffect, useContext } from "react";
+import Fuse from "fuse.js";
+import { Card, Header, Loading, Player } from "../components";
+import * as ROUTES from "../constants/routes";
+import logo from "../logo.svg";
+import { FirebaseContext } from "../context/firebase";
+import { SelectProfileContainer } from "./profiles";
+import { FooterContainer } from "./footer";
 
 export function BrowseContainer({ slides }) {
-    const [category, setCategory] = useState('series');
+    const [category, setCategory] = useState("series");
     const [profile, setProfile] = useState({});
     const [loading, setLoading] = useState(true);
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState("");
     const [slideRows, setSlideRows] = useState([]);
 
     const { firebase } = useContext(FirebaseContext);
@@ -30,7 +30,7 @@ export function BrowseContainer({ slides }) {
 
     useEffect(() => {
         const fuse = new Fuse(slideRows, {
-            keys: ['data.description', 'data.title', 'data.genre'],
+            keys: ["data.description", "data.title", "data.genre"],
         });
         const results = fuse.search(searchTerm).map(({ item }) => item);
 
@@ -62,14 +62,14 @@ export function BrowseContainer({ slides }) {
                             alt="Netflix"
                         />
                         <Header.TextLink
-                            active={category === 'series' ? 'true' : 'false'}
-                            onClick={() => setCategory('series')}
+                            active={category === "series" ? "true" : "false"}
+                            onClick={() => setCategory("series")}
                         >
                             Series
                         </Header.TextLink>
                         <Header.TextLink
-                            active={category === 'films' ? 'true' : 'false'}
-                            onClick={() => setCategory('films')}
+                            active={category === "films" ? "true" : "false"}
+                            onClick={() => setCategory("films")}
                         >
                             Films
                         </Header.TextLink>
@@ -104,7 +104,7 @@ export function BrowseContainer({ slides }) {
 
                 <Header.Feature>
                     <Header.FeatureCallOut>
-                        Watch Joker Now
+                        Watch Joker Now 123
                     </Header.FeatureCallOut>
                     <Header.Text>
                         Forever alone in a crowd, failed comedian Arthur Fleck
