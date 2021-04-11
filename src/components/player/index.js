@@ -1,6 +1,6 @@
-import React, { useState, useContext, createContext } from 'react';
-import ReactDOM from 'react-dom';
-import { Container, Button, Overlay, Inner, Close } from './styles/player';
+import React, { useState, useContext, createContext } from "react";
+import ReactDOM from "react-dom";
+import { Container, Button, Overlay, Inner, Close } from "./styles/player";
 
 export const PlayerContext = createContext();
 
@@ -36,6 +36,7 @@ Player.Video = function PlayerVideo({ src, ...restProps }) {
 };
 
 Player.Button = function PlayerButton({ ...restProps }) {
+    // eslint-disable-next-line no-unused-vars
     const { showPlayer, setShowPlayer } = useContext(PlayerContext);
 
     return (
