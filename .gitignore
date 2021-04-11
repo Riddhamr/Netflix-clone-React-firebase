@@ -4,9 +4,6 @@ src/lib/firebase.js
 # dependencies
 /node_modules
 /.firebase
-/.firebaserc
-/firebase.json
-/package-lock.json
 /.pnp
 .pnp.js
 
